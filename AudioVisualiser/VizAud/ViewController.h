@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
+#import "F3BarGauge.h"
 
-@interface ViewController : UIViewController<AVAudioPlayerDelegate>{
+
+
+
+@interface ViewController : UIViewController <AVAudioPlayerDelegate>{
     
     AVAudioPlayer *audioPlayer;
     NSTimer *playTimer;
@@ -22,27 +26,22 @@
     
 }
 
-
-@property (retain, nonatomic) IBOutlet UIProgressView *animBar;
-@property (retain, nonatomic) IBOutlet UIProgressView *animbar1;
-@property (retain, nonatomic) IBOutlet UIProgressView *animBar2;
-@property (retain, nonatomic) IBOutlet UIProgressView *animBar3;
-@property (retain, nonatomic) IBOutlet UISlider *volumeSlider;
-
-@property (retain, nonatomic) IBOutlet UILabel *volLabel;
-
-@property (retain, nonatomic) IBOutlet UILabel *result1Lbl;
-@property (retain, nonatomic) IBOutlet UILabel *result2Lbl;
-@property (retain, nonatomic) IBOutlet UILabel *result3Lbl;
-@property (retain, nonatomic) IBOutlet UILabel *result4Lbl;
-
+@property (retain, nonatomic) IBOutlet UILabel *remTime;
 @property (retain, nonatomic) IBOutlet UIImageView *imageView;
 
 
+@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar;
+@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar2;
+@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar3;
+@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar4;
+@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar5;
+@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar6;
 
 
-- (IBAction)volumeAction:(id)sender;
 
+@property (retain, nonatomic) IBOutlet UISlider *skipAudio;
+
+- (IBAction)skipAudioActn:(id)sender;
 - (void)playTimer:(NSTimer *)timer;
 
 @end

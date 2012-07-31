@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#define DegreesToRadians(x) ((x) * M_PI / 180.0)
+#define PI 3.14159
 
 @interface ViewController ()
 
@@ -14,29 +16,111 @@
 
 @implementation ViewController
 
-@synthesize animBar;
-@synthesize animbar1;
-@synthesize animBar2;
-@synthesize animBar3;
-@synthesize volumeSlider;
-@synthesize volLabel;
-@synthesize result1Lbl;
-@synthesize result2Lbl;
-@synthesize result3Lbl;
-@synthesize result4Lbl;
+
+@synthesize remTime;
+
+
 @synthesize imageView;
+@synthesize customRangeBar;
+@synthesize customRangeBar2;
+@synthesize customRangeBar3;
+@synthesize customRangeBar4;
+@synthesize customRangeBar5;
+@synthesize customRangeBar6;
+@synthesize skipAudio;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-
     
-    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"YOUR_SONG" ofType:@"MP3"]];
+    
+    NSString *soundPath = [[NSBundle mainBundle]pathForResource:@"YOUR_AUDIO_HERE" ofType:@"mp3"];
+    
+    NSURL *url = [NSURL fileURLWithPath:soundPath];
     
     NSError *error;
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    
+    
+    customRangeBar.numBars = 40;
+    customRangeBar.minLimit = 0.05;
+    customRangeBar.maxLimit = 1.00;
+    customRangeBar.holdPeak = NO;
+    customRangeBar.litEffect = NO;
+    // UIColor *clrBar = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0]; //if u want to make it 
+    customRangeBar.normalBarColor = [UIColor greenColor];
+    customRangeBar.warningBarColor = [UIColor yellowColor];;
+    customRangeBar.dangerBarColor = [UIColor redColor];;
+    customRangeBar.backgroundColor = [UIColor blackColor];
+    customRangeBar.outerBorderColor = [UIColor clearColor];
+    customRangeBar.innerBorderColor = [UIColor clearColor];
+    
+    
+    
+    
+    customRangeBar2.numBars = 40;
+    customRangeBar2.minLimit = 0.05;
+    customRangeBar2.maxLimit = 1.00;
+    customRangeBar2.holdPeak = NO;
+    customRangeBar2.litEffect = NO;
+    customRangeBar2.normalBarColor = [UIColor greenColor];
+    customRangeBar2.warningBarColor = [UIColor yellowColor];;
+    customRangeBar2.dangerBarColor = [UIColor redColor];;
+    customRangeBar2.backgroundColor = [UIColor blackColor];
+    customRangeBar2.outerBorderColor = [UIColor clearColor];
+    customRangeBar2.innerBorderColor = [UIColor clearColor];
+    
+    
+    customRangeBar3.numBars = 40;
+    customRangeBar3.minLimit = 0.05;
+    customRangeBar3.maxLimit = 1.00;
+    customRangeBar3.holdPeak = NO;
+    customRangeBar3.litEffect = NO;
+    customRangeBar3.normalBarColor = [UIColor greenColor];
+    customRangeBar3.warningBarColor = [UIColor yellowColor];;
+    customRangeBar3.dangerBarColor = [UIColor redColor];;
+    customRangeBar3.backgroundColor = [UIColor blackColor];
+    customRangeBar3.outerBorderColor = [UIColor clearColor];
+    customRangeBar3.innerBorderColor = [UIColor clearColor];
+    
+    customRangeBar4.numBars = 40;
+    customRangeBar4.minLimit = 0.05;
+    customRangeBar4.maxLimit = 1.00;
+    customRangeBar4.holdPeak = NO;
+    customRangeBar4.litEffect = NO;
+    customRangeBar4.normalBarColor = [UIColor greenColor];
+    customRangeBar4.warningBarColor = [UIColor yellowColor];;
+    customRangeBar4.dangerBarColor = [UIColor redColor];;
+    customRangeBar4.backgroundColor = [UIColor blackColor];
+    customRangeBar4.outerBorderColor = [UIColor clearColor];
+    customRangeBar4.innerBorderColor = [UIColor clearColor];
+    
+    customRangeBar5.numBars = 40;
+    customRangeBar5.minLimit = 0.05;
+    customRangeBar5.maxLimit = 1.00;
+    customRangeBar5.holdPeak = NO;
+    customRangeBar5.litEffect = NO;
+    customRangeBar5.normalBarColor = [UIColor greenColor];
+    customRangeBar5.warningBarColor = [UIColor yellowColor];;
+    customRangeBar5.dangerBarColor = [UIColor redColor];;
+    customRangeBar5.backgroundColor = [UIColor blackColor];
+    customRangeBar5.outerBorderColor = [UIColor clearColor];
+    customRangeBar5.innerBorderColor = [UIColor clearColor];
+    
+    customRangeBar6.numBars = 40;
+    customRangeBar6.minLimit = 0.05;
+    customRangeBar6.maxLimit = 1.00;
+    customRangeBar6.holdPeak = NO;
+    customRangeBar6.litEffect = NO;
+    customRangeBar6.normalBarColor = [UIColor greenColor];
+    customRangeBar6.warningBarColor = [UIColor yellowColor];;
+    customRangeBar6.dangerBarColor = [UIColor redColor];;
+    customRangeBar6.backgroundColor = [UIColor blackColor];
+    customRangeBar6.outerBorderColor = [UIColor clearColor];
+    customRangeBar6.innerBorderColor = [UIColor clearColor];
+
     
     
     
@@ -53,26 +137,31 @@
         
     }
     
-    audioPlayer.volume = 2;
-    volumeSlider.value = 2;
-  
+    //audioPlayer.volume = 2;  
+    skipAudio.minimumValue = 0;
+    skipAudio.maximumValue = audioPlayer.duration;
+    
+    
+
 
 }
 
 - (void)viewDidUnload
 {
-   // [self setAnimLabel:nil];
-    [self setAnimBar:nil];
-    [self setAnimbar1:nil];
-    [self setAnimBar2:nil];
-    [self setAnimBar3:nil];
-    [self setVolumeSlider:nil];
-    [self setVolLabel:nil];
-    [self setResult1Lbl:nil];
-    [self setResult2Lbl:nil];
-    [self setResult3Lbl:nil];
-    [self setResult4Lbl:nil];
+    // [self setAnimLabel:nil];
+
+    
     [self setImageView:nil];
+    
+    [self setCustomRangeBar:nil];
+    [self setCustomRangeBar2:nil];
+    [self setCustomRangeBar3:nil];
+    [self setCustomRangeBar4:nil];
+    [self setCustomRangeBar5:nil];
+    [self setCustomRangeBar6:nil];
+    [self setRemTime:nil];
+    [self setSkipAudio:nil];
+    [self setSiney:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     
@@ -85,28 +174,16 @@
     [audioPlayer play];
 }
 
-- (IBAction)volumeAction:(id)sender {
-    
-    audioPlayer.volume = volumeSlider.value;
-    
-    if (audioPlayer.volume == 0) {
-        [volLabel setText:@"Muted"];
-    }
-    else if (audioPlayer.volume == 4) {
-        [volLabel setText:@"Maxed"];
-    }
-    else {
-        [volLabel setText:@"Volume"];
-    }
-    
-}
+
+
 
 - (void)playTimer:(NSTimer *)timer{
+    
     [audioPlayer updateMeters];
     
     const double ALPHA = 1.05;
     const double ALPHA2 = 1.50;
-     const double ALPHA3 = 0.01;
+    const double ALPHA3 = 0.05;
     
 	double averagePowerForChannel = pow(10, (0.05 * [audioPlayer averagePowerForChannel:0]));
 	lowPassReslts = ALPHA * averagePowerForChannel + (1.0 - ALPHA) * lowPassReslts;
@@ -123,53 +200,90 @@
     double sizeImage = pow(10, (0.05 * [audioPlayer averagePowerForChannel:1]));
 	sizeImagePassReslts = ALPHA3 * sizeImage + (1.0 - ALPHA3) * sizeImagePassReslts;
     
+    
+	//if (lowPassReslts < 1.95)
+    //	NSLog(@"Should animate here But HOW?? %f",lowPassReslts);
+    
+    
+    customRangeBar.value = lowPassReslts2;
+    customRangeBar2.value = lowPassReslts3;
+    customRangeBar3.value = lowPassReslts;
+    customRangeBar4.value = lowPassReslts;
+    customRangeBar5.value = lowPassReslts3;
+    customRangeBar6.value = lowPassReslts2;
+    
+   
 
-        
-    animBar.progress = lowPassReslts;
-    animbar1.progress = lowPassReslts1;
-    animBar2.progress = lowPassReslts2;
-    animBar3.progress = lowPassReslts3;
     
     [imageView setFrame:CGRectMake(82, 20, 150, 150)];
-
-
     [imageView setTransform:CGAffineTransformMakeScale(sizeImagePassReslts, sizeImagePassReslts)];
+    
+    
+    skipAudio.value = audioPlayer.currentTime; //for the skipper
+    
+
 
     
 
-    [result1Lbl setText:[NSString stringWithFormat:@"%f",lowPassReslts]];
-    [result2Lbl setText:[NSString stringWithFormat:@"%f",lowPassReslts1]];
-    [result3Lbl setText:[NSString stringWithFormat:@"%f",lowPassReslts2]];
-    [result4Lbl setText:[NSString stringWithFormat:@"%f",lowPassReslts3]];
 
 
+
+
+    
+    float minutes = floor(audioPlayer.currentTime/60);
+    float seconds = audioPlayer.currentTime - (minutes * 60);
+    
+    float duration_minutes = floor(audioPlayer.duration/60);
+    float duration_seconds = audioPlayer.duration - (duration_minutes * 60);
+    
+    NSString *timeInf = [[NSString alloc] initWithFormat:@"%0.00f:%0.00f / %0.00f:%0.00f",minutes, seconds, duration_minutes, duration_seconds];
+    remTime.text = timeInf;
+    
+    [timeInf release];
+    
+  
+
+    
+    
 }
 
+- (IBAction)skipAudioActn:(id)sender {
+    
+    skipAudio.value = audioPlayer.currentTime ++;
+    
+}
 
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
+
+
 
 
 - (void)dealloc {
 	[playTimer release];
 	[audioPlayer release];
-    [animBar release];
-    [animbar1 release];
-    [animBar2 release];
-    [animBar3 release];
-    [volumeSlider release];
-    [volLabel release];
-    [result1Lbl release];
-    [result2Lbl release];
-    [result3Lbl release];
-    [result4Lbl release];
+    // [animLabel release];
+
     [imageView release];
+    
+    [customRangeBar release];
+    [customRangeBar2 release];
+    [customRangeBar3 release];
+    [customRangeBar4 release];
+    [customRangeBar5 release];
+    [customRangeBar6 release];
+    
+    [remTime release];
+    [skipAudio release];
+    
+
     [super dealloc];
 }
+
 
 
 @end
