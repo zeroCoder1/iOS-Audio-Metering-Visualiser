@@ -26,20 +26,20 @@
     
 }
 
-@property (retain, nonatomic) IBOutlet UILabel *remTime;
-@property (retain, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *remTime;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 
-@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar;
-@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar2;
-@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar3;
-@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar4;
-@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar5;
-@property (retain, nonatomic) IBOutlet F3BarGauge *customRangeBar6;
+@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar;
+@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar2;
+@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar3;
+@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar4;
+@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar5;
+@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar6;
 
 
 
-@property (retain, nonatomic) IBOutlet UISlider *skipAudio;
+@property (strong, nonatomic) IBOutlet UISlider *skipAudio;
 
 - (IBAction)skipAudioActn:(id)sender;
 - (void)playTimer:(NSTimer *)timer;

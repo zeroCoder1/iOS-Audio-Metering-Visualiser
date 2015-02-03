@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		394AB0BB15B6DE59008BA1F3 /* F3BarGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 394AB0BA15B6DE59008BA1F3 /* F3BarGauge.m */; };
+		394AB0BB15B6DE59008BA1F3 /* F3BarGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 394AB0BA15B6DE59008BA1F3 /* F3BarGauge.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3988BEB7158A49F4000E1975 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988BEB6158A49F4000E1975 /* UIKit.framework */; };
 		3988BEB9158A49F4000E1975 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988BEB8158A49F4000E1975 /* Foundation.framework */; };
 		3988BEBB158A49F4000E1975 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988BEBA158A49F4000E1975 /* CoreGraphics.framework */; };
@@ -19,6 +19,7 @@
 		3988BED4158A4A11000E1975 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988BED3158A4A11000E1975 /* AVFoundation.framework */; };
 		3988BEF7158A78BB000E1975 /* octocat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3988BEF6158A78BB000E1975 /* octocat.png */; };
 		3988BF17158B186C000E1975 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988BF16158B186B000E1975 /* QuartzCore.framework */; };
+		39C3D0ED1A8093FC007715F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C3D0EC1A8093FC007715F9 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3988BED3158A4A11000E1975 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3988BEF6158A78BB000E1975 /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octocat.png; sourceTree = "<group>"; };
 		3988BF16158B186B000E1975 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		39C3D0EC1A8093FC007715F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		3988BEA7158A49F4000E1975 = {
 			isa = PBXGroup;
 			children = (
+				39C3D0EC1A8093FC007715F9 /* Default-568h@2x.png */,
 				394AB0BD15B6DE5D008BA1F3 /* BarGauge */,
 				3988BEBC158A49F4000E1975 /* VizAud */,
 				3988BEB5158A49F4000E1975 /* Frameworks */,
@@ -148,7 +151,7 @@
 		3988BEA9158A49F4000E1975 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = 3988BEAC158A49F4000E1975 /* Build configuration list for PBXProject "VizAud" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3988BEC1158A49F4000E1975 /* InfoPlist.strings in Resources */,
+				39C3D0ED1A8093FC007715F9 /* Default-568h@2x.png in Resources */,
 				3988BECD158A49F5000E1975 /* ViewController.xib in Resources */,
 				3988BEF7158A78BB000E1975 /* octocat.png in Resources */,
 			);
@@ -218,9 +222,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -230,10 +241,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -242,15 +257,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -260,6 +285,7 @@
 		3988BED1158A49F5000E1975 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VizAud/VizAud-Prefix.pch";
 				INFOPLIST_FILE = "VizAud/VizAud-Info.plist";
@@ -272,6 +298,7 @@
 		3988BED2158A49F5000E1975 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VizAud/VizAud-Prefix.pch";
 				INFOPLIST_FILE = "VizAud/VizAud-Info.plist";

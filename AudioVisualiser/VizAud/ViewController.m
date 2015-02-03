@@ -36,7 +36,7 @@
     
     
     
-    NSString *soundPath = [[NSBundle mainBundle]pathForResource:@"YOUR_AUDIO_HERE" ofType:@"mp3"];
+    NSString *soundPath = [[NSBundle mainBundle]pathForResource:@"YOUR_AUDIO_FILE" ofType:@"mp3"];
     
     NSURL *url = [NSURL fileURLWithPath:soundPath];
     
@@ -146,27 +146,7 @@
 
 }
 
-- (void)viewDidUnload
-{
-    // [self setAnimLabel:nil];
 
-    
-    [self setImageView:nil];
-    
-    [self setCustomRangeBar:nil];
-    [self setCustomRangeBar2:nil];
-    [self setCustomRangeBar3:nil];
-    [self setCustomRangeBar4:nil];
-    [self setCustomRangeBar5:nil];
-    [self setCustomRangeBar6:nil];
-    [self setRemTime:nil];
-    [self setSkipAudio:nil];
-    [self setSiney:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    
-    
-}
 
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
@@ -239,7 +219,6 @@
     NSString *timeInf = [[NSString alloc] initWithFormat:@"%0.00f:%0.00f / %0.00f:%0.00f",minutes, seconds, duration_minutes, duration_seconds];
     remTime.text = timeInf;
     
-    [timeInf release];
     
   
 
@@ -263,26 +242,6 @@
 
 
 
-- (void)dealloc {
-	[playTimer release];
-	[audioPlayer release];
-    // [animLabel release];
-
-    [imageView release];
-    
-    [customRangeBar release];
-    [customRangeBar2 release];
-    [customRangeBar3 release];
-    [customRangeBar4 release];
-    [customRangeBar5 release];
-    [customRangeBar6 release];
-    
-    [remTime release];
-    [skipAudio release];
-    
-
-    [super dealloc];
-}
 
 
 
