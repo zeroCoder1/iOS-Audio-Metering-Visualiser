@@ -36,7 +36,7 @@
     
     
     
-    NSString *soundPath = [[NSBundle mainBundle]pathForResource:@"YOUR_AUDIO_FILE" ofType:@"mp3"];
+    NSString *soundPath = [[NSBundle mainBundle]pathForResource:@"high" ofType:@"mp3"];
     
     NSURL *url = [NSURL fileURLWithPath:soundPath];
     
@@ -133,7 +133,11 @@
         [audioPlayer prepareToPlay];
         audioPlayer.meteringEnabled = YES;
         [audioPlayer play];
-        playTimer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(playTimer:) userInfo:nil repeats:YES];
+        //playTimer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(playTimer:) userInfo:nil repeats:YES];
+        
+        playTimer = [CADisplayLink displayLinkWithTarget:self selector:@selector(playTimer:)];
+        [playTimer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+
         
     }
     
@@ -157,7 +161,7 @@
 
 
 
-- (void)playTimer:(NSTimer *)timer{
+- (void)playTimer:(CADisplayLink *)timer{
     
     [audioPlayer updateMeters];
     

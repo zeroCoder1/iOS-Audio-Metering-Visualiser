@@ -17,7 +17,8 @@
 @interface ViewController : UIViewController <AVAudioPlayerDelegate>{
     
     AVAudioPlayer *audioPlayer;
-    NSTimer *playTimer;
+    //NSTimer *playTimer;
+    CADisplayLink *playTimer;
     double lowPassReslts;
     double lowPassReslts1;
     double lowPassReslts2;
