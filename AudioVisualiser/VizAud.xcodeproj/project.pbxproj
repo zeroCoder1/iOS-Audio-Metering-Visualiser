@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		394AB0BB15B6DE59008BA1F3 /* F3BarGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 394AB0BA15B6DE59008BA1F3 /* F3BarGauge.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		39662A061A81E17B00236C29 /* high.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39662A051A81E17B00236C29 /* high.mp3 */; };
 		3988BEB7158A49F4000E1975 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988BEB6158A49F4000E1975 /* UIKit.framework */; };
 		3988BEB9158A49F4000E1975 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988BEB8158A49F4000E1975 /* Foundation.framework */; };
 		3988BEBB158A49F4000E1975 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988BEBA158A49F4000E1975 /* CoreGraphics.framework */; };
@@ -25,9 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		394AB0B915B6DE59008BA1F3 /* F3BarGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3BarGauge.h; sourceTree = "<group>"; };
-		394AB0BA15B6DE59008BA1F3 /* F3BarGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3BarGauge.m; sourceTree = "<group>"; };
-		39662A051A81E17B00236C29 /* high.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = high.mp3; sourceTree = "<group>"; };
 		3988BEB2158A49F4000E1975 /* VizAud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizAud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3988BEB6158A49F4000E1975 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3988BEB8158A49F4000E1975 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,20 +60,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		394AB0BD15B6DE5D008BA1F3 /* BarGauge */ = {
-			isa = PBXGroup;
-			children = (
-				394AB0B915B6DE59008BA1F3 /* F3BarGauge.h */,
-				394AB0BA15B6DE59008BA1F3 /* F3BarGauge.m */,
-			);
-			name = BarGauge;
-			sourceTree = "<group>";
-		};
 		3988BEA7158A49F4000E1975 = {
 			isa = PBXGroup;
 			children = (
 				39C3D0EC1A8093FC007715F9 /* Default-568h@2x.png */,
-				394AB0BD15B6DE5D008BA1F3 /* BarGauge */,
 				3988BEBC158A49F4000E1975 /* VizAud */,
 				3988BEB5158A49F4000E1975 /* Frameworks */,
 				3988BEB3158A49F4000E1975 /* Products */,
@@ -123,7 +108,6 @@
 		3988BEBD158A49F4000E1975 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39662A051A81E17B00236C29 /* high.mp3 */,
 				3988BEF6158A78BB000E1975 /* octocat.png */,
 				3988BEBE158A49F4000E1975 /* VizAud-Info.plist */,
 				3988BEBF158A49F4000E1975 /* InfoPlist.strings */,
@@ -186,7 +170,6 @@
 				3988BEC1158A49F4000E1975 /* InfoPlist.strings in Resources */,
 				39C3D0ED1A8093FC007715F9 /* Default-568h@2x.png in Resources */,
 				3988BECD158A49F5000E1975 /* ViewController.xib in Resources */,
-				39662A061A81E17B00236C29 /* high.mp3 in Resources */,
 				3988BEF7158A78BB000E1975 /* octocat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,7 +184,6 @@
 				3988BEC3158A49F4000E1975 /* main.m in Sources */,
 				3988BEC7158A49F4000E1975 /* AppDelegate.m in Sources */,
 				3988BECA158A49F4000E1975 /* ViewController.m in Sources */,
-				394AB0BB15B6DE59008BA1F3 /* F3BarGauge.m in Sources */,
 				3989D8DE1A94846300498190 /* SSProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

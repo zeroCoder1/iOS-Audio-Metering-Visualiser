@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
-#import "F3BarGauge.h"
+
 
 
 
@@ -31,12 +31,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 
-@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar;
-@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar2;
-@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar3;
-@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar4;
-@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar5;
-@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar6;
+
 
 
 
