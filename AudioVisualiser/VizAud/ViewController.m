@@ -60,7 +60,12 @@
     
 
 
+    _progressView = [[SSProgressView alloc]initWithFrame:CGRectMake(5, 150,300, 300)];
+    _progressView.percent = 0;
+    _progressView.color=[UIColor whiteColor];
+    [self.view addSubview:_progressView];
 }
+
 
 
 
@@ -102,8 +107,11 @@
     
     
 
-    
-   
+    _progressView.percent = lowPassReslts*10;
+    _progressView.textContent = [NSString stringWithFormat:@"%f", _progressView.percent];
+
+    [_progressView setNeedsDisplay];
+
 
     
     [_imageView setFrame:CGRectMake(82, 20, 150, 150)];
@@ -113,7 +121,7 @@
     _skipAudio.value = audioPlayer.currentTime; //for the skipper
     
 
-
+    
     
 
 

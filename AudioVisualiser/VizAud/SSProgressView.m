@@ -20,6 +20,7 @@
         
         startAngle = M_PI * 1.5;
         endAngle = startAngle + (M_PI * 2);
+       self.backgroundColor = [UIColor clearColor];
     }
     
     return self;

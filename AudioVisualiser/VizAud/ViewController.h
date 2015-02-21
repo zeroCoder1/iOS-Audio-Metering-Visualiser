@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
 
-
+#import "SSProgressView.h"
 
 
 
@@ -39,5 +39,8 @@
 
 - (IBAction)skipAudioActn:(id)sender;
 - (void)playTimer:(NSTimer *)timer;
+
+
+@property (strong, nonatomic) SSProgressView *progressView;
 
 @end
